@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: 'Data ∩ Product',
@@ -42,8 +44,8 @@ module.exports = {
         trackingId: '',
         twitterHandle: '@thegyre',
         spectrumHandle: 'data-product',
-        algoliaApiKey: '59cab148337f95b35039acdbd4564515',
-        algoliaIndexName: 'P3ZGBS5QDA',
+        algoliaApiKey: process.env.ALGOLIA_API_KEY,
+        algoliaIndexName: process.env.ALGOLIA_APP_ID,
         youtubeUrl: '',
         logoLink: 'https://thegyre.io',
         navConfig: {
