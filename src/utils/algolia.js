@@ -41,7 +41,8 @@ const queries = [
           })),
         ];
       },
-    []),
+        []),
+    indexName: 'the-gyre-data',
   },
 ]
 
