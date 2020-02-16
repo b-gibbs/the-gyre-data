@@ -1,3 +1,5 @@
+const queries = require('./src/utils/algolia');
+
 require('dotenv').config();
 
 module.exports = {
@@ -18,6 +20,16 @@ module.exports = {
         path: `${__dirname}/content/images`,
       },
     },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME,
+        queries,
+        chunkSize: 10000, // default: 1000
+      },
+     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -68,12 +80,6 @@ module.exports = {
         sidebarCategories: {
           null: [
             'index',
-            'about',
-          ],
-          Data: [
-            'data/index',
-            'data/lifecycle',
-            'data/machine-learning',
           ],
         },
       },
