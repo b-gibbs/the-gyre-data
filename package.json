@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "data-docs",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A documentation site for the data science docs at https://thegyre.io/data",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Bradley Gibbs <bradley@thegyre.io>",
   "dependencies": {
     "algoliasearch": "^4.0.3",
     "dotenv": "^8.2.0",
