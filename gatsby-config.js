@@ -81,6 +81,9 @@ module.exports = {
           null: [
             'index',
           ],
+          Lifecycle: [
+            'lifecycle',
+          ]
         },
       },
     },
