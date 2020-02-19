@@ -203,7 +203,7 @@ export default () => {
   const resultsShown = focused && value.trim();
   return (
     <Fragment>
-      <InstantSearch searchClient={client} indexName="the-gyre">
+      <InstantSearch searchClient={client} indexName="the-gyre-data">
         <Overlay visible={resultsShown} />
           <Container>
             <SearchBox
