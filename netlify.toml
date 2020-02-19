@@ -1,4 +1,0 @@
-[build]
-  base = "/"
-  publish = "public/"
-  command = "gatsby build --prefix-paths && mkdir -p data && mv public/* data && mv data public/"

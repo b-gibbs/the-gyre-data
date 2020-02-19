@@ -98,7 +98,7 @@ const SearchBox = connectSearchBox(({ currentRefinement, refine, ...props }) =>
 const List = styled('ul')({
   listStyle: 'none',
   margin: '0 auto',
-  maxWidth: '90%',
+  maxWidth: '95%',
   padding: 0,
 });
 
