@@ -4,7 +4,7 @@ import DocsetSwitcher from 'gatsby-theme-apollo-docs/src/components/docset-switc
 import Header from 'gatsby-theme-apollo-docs/src/components/header';
 import PropTypes from 'prop-types';
 import React, {createContext, useMemo, useRef, useState} from 'react';
-import Search from 'gatsby-theme-apollo-docs/src/components/search';
+import Search from './search';
 import styled from '@emotion/styled';
 import useLocalStorage from 'react-use/lib/useLocalStorage';
 import {Button} from '@apollo/space-kit/Button';
@@ -267,13 +267,7 @@ export default function PageLayout(props) {
               <MenuButton onClick={openSidebar} />
               <MobileLogo width={32} fill="currentColor" />
             </MobileNav>
-            {algoliaApiKey && algoliaIndexName && (
-              <Search
-                siteName={siteName}
-                apiKey={algoliaApiKey}
-                indexName={algoliaIndexName}
-              />
-            )}
+            <Search />
           </Header>
           <SelectedLanguageContext.Provider value={selectedLanguageState}>
             <NavItemsContext.Provider value={navItems}>
