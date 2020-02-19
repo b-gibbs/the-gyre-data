@@ -82,7 +82,16 @@ module.exports = {
             'index',
           ],
           Lifecycle: [
-            'lifecycle',
+            'lifecycle/index',
+          ],
+          'Machine Learning': [
+            'machine-learning/index'
+          ],
+          'Deep Learning': [
+            'deep-learning/index'
+          ],
+          Resources: [
+            'resources'
           ]
         },
       },
