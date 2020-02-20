@@ -159,8 +159,6 @@ export default function PageLayout(props) {
     navConfig = {},
     footerNavConfig,
     logoLink,
-    algoliaApiKey,
-    algoliaIndexName,
     menuTitle
   } = props.pluginOptions;
 

@@ -1,6 +1,5 @@
-import React, { Fragment, useState, useRef } from 'react';
+import React, { Fragment, useState } from 'react';
 import styled from '@emotion/styled';
-import {css} from '@emotion/core';
 import algoliasearch from 'algoliasearch/lite';
 import {
   InstantSearch,
@@ -8,9 +7,8 @@ import {
   connectHits,
   Highlight,
 } from 'react-instantsearch-dom';
-import {IconClose} from '@apollo/space-kit/icons/IconClose';
 import { colors } from 'gatsby-theme-apollo-core';
-import {position, size, transparentize} from 'polished';
+import {position, transparentize} from 'polished';
 require('dotenv').config();
 
 
@@ -80,20 +78,6 @@ const HitListContainer = styled.div(
     borderRadius: '5px',
   }
 );
-
-const SearchBox = connectSearchBox(({ currentRefinement, refine, ...props }) =>
-  
-  <form noValidate action='' role='search'>
-    <StyledInput
-      type='search'
-      id='search'
-      placeholder='Search Data...'
-      value={currentRefinement}
-      onChange={e => e.currentTarget.value}
-      {...props}
-    />
-  </form>
-)
 
 const List = styled('ul')({
   listStyle: 'none',
@@ -179,43 +163,47 @@ const Hits = connectHits(({ hits }) => (
   </List>
 ));
 
+
+
+const SearchBox = ({ currentRefinement, refine, setActive }) => (
+  <form noValidate action="" role="search">
+    <StyledInput
+      type="search"
+      id="input"
+      placeholder="Search Data ∩ Product"
+      value={currentRefinement}
+      onBlur={() => {
+        if (currentRefinement === '') {
+          setActive(false);
+        }
+      }}
+      onChange={event => {
+        refine(event.currentTarget.value);
+        if (currentRefinement === '') {
+          setActive(false);
+        } else {
+          setActive(true)
+        };
+        
+      }}
+    />
+  </form>
+)
+
+const CustomSearchBox = connectSearchBox(SearchBox)
+
+
 export default () => {
-  const [focused, setFocused] = useState(false);
-  const [value, setValue] = useState('');
-  const input = useRef(null);
-  
-  function onChange(event) {
-    setValue(event.target.value);
-  }
+  const [active, setActive] = useState(false);
 
-  function onFocus() {
-    setFocused(true);
-  }
-
-  function onBlur() {
-    setFocused(false);
-  }
-
-  function reset() {
-    setValue('');
-  }
-
-  const resultsShown = focused && value.trim();
   return (
     <Fragment>
       <InstantSearch searchClient={client} indexName="the-gyre-data">
-        <Overlay visible={resultsShown} />
+        <Overlay visible={active} />
           <Container>
-            <SearchBox
-              ref={input}
-              id='input'
-              onFocus={onFocus}
-              onBlur={onBlur}
-              onChange={onChange}
-              value={value}
-              resultsShown={resultsShown}
-            />
-            <HitListContainer visible={resultsShown}>
+          <CustomSearchBox
+            setActive={setActive} />
+            <HitListContainer visible={active}>
               <Hits />
             </HitListContainer>
             
