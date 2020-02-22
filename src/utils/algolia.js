@@ -5,6 +5,8 @@ const pageQuery = `{
         frontmatter {
           description
           title
+          section
+          category
         }
         rawBody
         fields {
@@ -22,6 +24,8 @@ const queries = [
     transformer: ({ data }) =>
       data.allMdx.edges.reduce((records, { node }) => {
         const {
+          section,
+          category,
           title,
           description,
         } = node.frontmatter;
@@ -29,7 +33,7 @@ const queries = [
           slug,
         } = node.fields;        
 
-        const base = { slug, title, description };
+        const base = { slug, section, category, title, description };
         const chunks = node.rawBody.split('\n\n');
 
         return [
@@ -42,7 +46,7 @@ const queries = [
         ];
       },
         []),
-    indexName: 'the-gyre-data',
+    indexName: 'the-gyre-product',
   },
 ]
 
