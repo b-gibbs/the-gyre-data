@@ -46,7 +46,7 @@ const queries = [
         ];
       },
         []),
-    indexName: 'the-gyre-product',
+    indexName: 'the-gyre-data',
   },
 ]
 
