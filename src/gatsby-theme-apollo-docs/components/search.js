@@ -195,7 +195,7 @@ const CustomSearchBox = connectSearchBox(SearchBox)
 
 export default () => {
   const [active, setActive] = useState(false);
-
+  
   return (
     <Fragment>
       <InstantSearch searchClient={client} indexName="the-gyre-data">
@@ -206,9 +206,7 @@ export default () => {
             <HitListContainer visible={active}>
               <Hits />
             </HitListContainer>
-            
           </Container>
-        
       </InstantSearch>
     </Fragment>
   )

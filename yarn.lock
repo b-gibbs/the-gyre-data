@@ -6828,6 +6828,13 @@ gatsby-plugin-algolia@^0.5.0:
     gatsby-cli "^1.1.58"
     lodash.chunk "^4.2.0"
 
+gatsby-plugin-amplitude-analytics@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-amplitude-analytics/-/gatsby-plugin-amplitude-analytics-2.0.0.tgz#a963cdc588cc0225ab19e103bcc0db20399e23af"
+  integrity sha512-z4lBxUdDSybOetnKf3mFefJOdGYuiewFslq66ISV+yMiDarQL5OpqEiZwBqRa5FIH0+IOkKeXapvqMPpd+oA/A==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+
 gatsby-plugin-emotion@^4.0.3:
   version "4.1.22"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-emotion/-/gatsby-plugin-emotion-4.1.22.tgz#e153debef74afa205336738dcf1988c95b308c4f"
@@ -6952,7 +6959,7 @@ gatsby-plugin-react-helmet@^3.1.21:
   dependencies:
     "@babel/runtime" "^7.7.6"
 
-gatsby-plugin-segment-js@^3.0.1:
+gatsby-plugin-segment-js@^3.0.1, gatsby-plugin-segment-js@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-segment-js/-/gatsby-plugin-segment-js-3.1.0.tgz#df467aec38555a9cf71bacd34352b2dfbaba3687"
   integrity sha512-oBcIY+riNehfyQXp8PEGVQTz/VPt/+k2aXCh/bNZSR4HhjEAXafcSCReS2xzs/3IJRa3gH0+NOZvRU8peXDb/w==
@@ -7228,6 +7235,16 @@ gatsby-transformer-sharp@^2.3.13:
     probe-image-size "^4.1.1"
     semver "^5.7.1"
     sharp "^0.23.4"
+
+gatsby-transformer-yaml@^2.2.25:
+  version "2.2.25"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-2.2.25.tgz#4aa432d571a41d39c6cb3c85c9261b7806a98192"
+  integrity sha512-W+rbrTbpabF74U9B6PcqwbUSvlKPtnUEq+ujx4w8mqbP152ttN15TRFtZHmqQdqupokdHMzq87dTZlD4qkWbzw==
+  dependencies:
+    "@babel/runtime" "^7.7.6"
+    js-yaml "^3.13.1"
+    lodash "^4.17.15"
+    unist-util-select "^1.5.0"
 
 gatsby@^2.19.7:
   version "2.19.7"
