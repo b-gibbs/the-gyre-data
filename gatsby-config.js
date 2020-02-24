@@ -97,19 +97,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `resources`,
-        name: `${__dirname}/resources`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-yaml`,
-      options: {
-        typeName: `Resource`,
-      },
-    },
-    {
       resolve: `gatsby-plugin-segment-js`,
       options: {
         // your segment write key for your production environment
