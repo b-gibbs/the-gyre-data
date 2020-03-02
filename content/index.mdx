@@ -1,0 +1,83 @@
+---
+category: Data
+section: Introduction
+title: Introduction
+description: Introduction to the Data Science documents
+---
+
+import { Blockquote, Definition, Note } from '$styles';
+import { colors } from 'gatsby-theme-apollo-core';
+
+## What is data science?  
+<h4 style={{
+  color: colors.primary
+}}>
+Data science is a tool that solves certain problems.</h4>
+
+There's a real temptation to think of data science as a magical cure-all—as in, "If we could just data science real good, we'd win."
+
+It solves some problems better, faster and more cost-effectively than other tools and may be the only tool that can solve particular problems, but, from a product manager's perspective, the first and most important thing to know about data science is that it is a tool that solves certain problems. It should be employed as such.
+
+Like other tools, to make effective use of data science, it must be applied to the correct problem. Most data scientists will readily admit that, particularly in a commercial context, identifying and clearly defining the problem to be solved and setting metrics for measuring acceptable results is much more difficult and more time-consuming than developing a good model to solve it.
+
+<Note>
+Data science is a new and quickly evolving field. The taxonomy and terms of art are unsettled. Universities are rapidly creating data science degrees to meet industry demand for skilled data scientists. Some have made data science its own school, while others have chosen to add it to existing statistics or computer science schools. If an article or book classifies something or uses a term in a way that is slightly different than you've come to expect, it probably isn't you.
+</Note>
+<br/>
+<p>Despite the note above, the diagram below is widely accepted and useful.</p>
+<br/>
+
+![ai-ml-dl](./images/ai-ml-dl.png)
+
+<br/>
+<br/>
+<Definition>
+  <strong>Artificial Intelligence:</strong> A program that can sense, reason, act and adapt. <br/>  
+  <strong>Machine Learning:</strong> Algorithms whose performance improve as they are exposed to more data over time.<br/>
+  <strong>Deep Learning:</strong> Subset of machine learning in which multilayered neural networks learn from vast amounts of data.
+</Definition>
+
+Today, data science is primarily conducted within the Machine Learning sphere in the diagram above. Before we dive fully into that Machine Learning sphere for the remainder of this site, it's worth making a note of [OpenAI](https://openai.com/). OpenAI's mission "is to ensure that artificial general intelligence (AGI) benefits all of humanity, primarily by attempting to build safe AGI and share the benefits with the world." OpenAI was founded by Elon Musk, Sam Altman and other prominent Silicon Valley dwellers. Musk left the board in early 2018.  
+
+Unless otherwise noted, this site will deal only with topics that fit wholly within the machine learning sphere, and its subset, deep learning.
+
+## How does it work?  
+<h4 style={{
+  color: colors.primary,
+}}>
+Machine learning is a tool that creates a formula to transform input data into desired output.</h4>
+
+The goal of machine learning is to derive a mathematical formula that will take data provided to it as input and transform it into output. 
+
+"Machine Learning" is poorly named. There is no machine. There's a mathematical formula processing data, running on some form of compute power. And, there is no learning. When an animal learns something, it notices when circumstances change and will adjust accodingly, based on its understanding of what it has learned. That is not the case with a machine learning formula. The formula is created to fit very precisely to the data that was used to create it. If the formula encounters data that differs from the data used to create the formula, it cannot adjust. Its performance will simply degrade. Digging a little deeper into how machine learning forumlas are created will reveal why this is.
+
+When writing a computer program, a programmer writes rules for the computer to execute. The computer does so, both faithfully and reliably, over and over again. The programmer writes rules, a user comes along and inputs data, the computer applies the rules it has been given and displays the results.
+
+An email spam filter is an excellent example. The problem is clear: to alleviate users' burden of wading through unwanted email. Let's measure success as fewer than 5% of spam email makes it to a user's inbox and fewer than 5% of non-spam is wrongly diverted to the junk folder.
+
+If a programmer were to create a program to filter spam from ham (fun fact: "ham" is the term used to describe email that is not spam), it would be a binary classification problem. Emails are the input, the spam filtering rules are the formula (or "algorithm") to be applied and the result is one of two things–either ham or spam.
+
+The creator of the spam filter could look at the body of the email for words or phrases that are common to spam emails and add rules to mark emails containing these words and phrases as spam. The creator could then move on to the email metadata and add rules for email addresses that frequently send spam and subject lines containing words like "special offer". You can imagine that the number of rules is becoming increasingly unwieldy and brittle by this point. Now, spam senders are catching on to the fact that their emails are no longer getting through. In order to get their spam past this filter, they start using new email addresses and their subject lines now contain "s p e c i a l   o f f e r". The diligent spam filter creator gets back to work, adding new rules for each new variant.
+
+Machine learning differs. Let's look at how a data scientist would approach this binary classification problem. 
+
+In short, the data scientist would set aside 10,000 of the emails for final testing. She would then feed a portion of the remaining emails through several algorithms that would look for similarities among the email marked as spam, similarities among emails marked as ham, and differences between the two sets. Each algorithm would then create a model that embodied its findings. The data scientist would feed the remaining emails through the models created and look at performance benchmarks:  
+  
+  1. How many ham emails were correctly marked ham?  
+  2. How many spam emails were mistakenly marked ham?  
+  3. How many spam emails were correctly marked spam?  
+  4. How many ham emails were mistakenly marked spam?  
+  
+If any of the algorithms produced models whose benchmarks approached her pre-established goals, she might choose one or two of them for further refinements. Finally, she would test the refined model on the 20-30% of the emails she had initally set aside final testing and note its performance on these emails.  
+  
+The most important takeaways:
+- the data scientist did not write any rules herself- the algorithm generated rules after being given input (the emails) and answers (the labels of spam or ham)  
+- the problem to be solved was clearly defined in advance
+- the metrics for successfully solving the problem were clearly defined in advance  
+- the emails were generally representative of future emails that the model would be asked to mark as spam or ham  
+- upon receipt of the full data set, the data scientist immediately set aside 10,000 of the emails for final tesing (the "test set", generally 20-30% of the total)   
+  - of the remaining 40,000 emails, 30,000 were used to build models (the "training set")  
+  - and the other 10,000 emails were used to validate the models (the "validation set")  
+
+
+## Why would I use it?  
