@@ -7,6 +7,7 @@ const pageQuery = `{
           title
           section
           category
+          path
         }
         rawBody
         fields {
@@ -28,12 +29,13 @@ const queries = [
           category,
           title,
           description,
+          path,
         } = node.frontmatter;
         const {
           slug,
         } = node.fields;        
 
-        const base = { slug, section, category, title, description };
+        const base = { slug, section, category, title, path, description };
         const chunks = node.rawBody.split('\n\n');
 
         return [

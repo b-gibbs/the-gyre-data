@@ -70,6 +70,9 @@ module.exports = {
           'Blog': {
             url: 'https://www.thegyre.io/blog',
           },
+          'Resources': {
+            url: 'https://www.thegyre.io/resources',
+          },
           Github: {
             url: 'https://github.com/b-gibbs/the-gyre',
           },
