@@ -54,8 +54,8 @@ The goal of machine learning is to derive a mathematical formula that will take 
 Let's take an email spam filter as an example. The problem is clear: users' inboxes are being flooded with unwanted emails. We can make our users happier by accurately diverting spam email into a junk folder, thus alleviating the burden of wading through unwanted email. Filtering spam from ham (fun fact: "ham" is the term used to describe email that is not spam), is a binary classification problem. Emails are the input, the spam filtering rules are the algorithm to be applied and the result is one of two things–either ham or spam.  
 
 Let's measure success as:  
-- less than 5% of the email that makes it to a user's inbox is spam, and  
-- less than 5% of ham is wrongly diverted to the junk folder.
+- fewer than 5% of the email that makes it to a user's inbox is spam, and  
+- fewer than 5% of ham is wrongly diverted to the junk folder.
 
 If a programmer were to create a spam filter using a traditional software approach, he would begin by looking at the body of the email for words or phrases that are common to spam emails and add rules to mark emails containing these words and phrases as spam. The creator could then move on to the email metadata and add rules for email addresses that frequently send spam and subject lines containing words like "special offer". You can imagine that the number of rules is becoming increasingly unwieldy and brittle by this point. Now, spam senders are catching on to the fact that their emails are no longer getting through. In order to get their spam past this filter, they start using new email addresses and their subject lines now contain "s p e c i a l   o f f e r", instead of "special offer". The diligent spam filter creator gets back to work, adding new rules for each new variant.
 
@@ -66,23 +66,22 @@ The data scientist would start by collecting, say, 50,000 emails that have been 
  - similarities among emails marked as ham, and  
  - differences between the two sets.  
  
-The algorithm would then create a model that embodied its findings. The data scientist would feed the remaining emails through the model created and look at performance benchmarks:  
+The algorithm would then create a model that embodied its findings. The data scientist would feed the remaining emails through the model created and look at performance metrics, such as:  
   
   1. How many ham emails were correctly marked ham?  
   2. How many spam emails were mistakenly marked ham?  
   3. How many spam emails were correctly marked spam?  
   4. How many ham emails were mistakenly marked spam?  
   
-She would likely repeat these steps with additional algolrithms, looking for the best out-of-the-box perfoemance. If any of the algorithms produced models whose benchmarks approached her pre-established goals, she might choose one or two of them for further refinements. Finally, she would test the refined model or models on the 10,000 emails she had initally set aside for final testing. The model's performance on this final set of previously unseen emails is the best measure of its ability to filter spam from ham. It's important to note that once her filter is in production, she must continue to monitor its performance from time-to-time. Models tend to "drift", or lose accuracy over time. In this instance, you can imagine that spam senders will be looking for new ways to thwart the filter and the filter will need to be updated occasionally to account for these new tactics.
+She would likely repeat these steps with additional algolrithms, looking for the best out-of-the-box performance. If any of the algorithms produced models whose performance approached her pre-established goals, she might choose one or two of them for further refinements. Finally, she would test the refined model or models on the 10,000 emails she had initally set aside for final testing. The model's performance on this final set of previously unseen emails is the best measure of its ability to filter spam from ham. It's important to note that once her filter is in production, she must continue to monitor its performance from time-to-time. Models tend to "drift", or lose accuracy over time. In this instance, you can imagine that spam senders will be looking for new ways to thwart the filter and the filter will need to be updated occasionally to account for these new tactics.
   
 The most important takeaways:
-- the data scientist did not write any rules herself- the algorithm generated rules after being given input (the emails) and answers (the labels of spam or ham)  
-- the problem to be solved was clearly defined in advance
-- the metrics for successfully solving the problem were clearly defined in advance  
+- the data scientist did not write any rules herself; the algorithm generated rules after being given labeled data (emails marked as ham or spam  )
+- the problem to be solved was clearly defined in advance  
+- the metrics required for a proposed solution to be deemed a success were clearly defined in advance  
 - the emails were generally representative of future emails that the model would be asked to mark as spam or ham  
 - upon receipt of the full data set, the data scientist immediately set aside 10,000 of the emails for final tesing (the "test set", generally 20-30% of the total)   
   - of the remaining 40,000 emails, 30,000 were used to build models (the "training set")  
   - and the other 10,000 emails were used to validate the models (the "validation set")  
-
 
 ## Why would I use it?  
