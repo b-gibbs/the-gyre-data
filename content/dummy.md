@@ -1,5 +1,6 @@
 ---
-category: Dummy
+category: 
+  - Dummy
 section: Test
 title: Dummy
 description: A dummy .mdx file to keep GraphQL quiet.
