@@ -59,6 +59,38 @@ const BodyContent = styled.div({
     display: 'block',
     maxWidth: '100%',
     margin: '0 auto'
+  },
+  '.jargon-term': {
+    textDecoration: 'underline',
+    color: colors.secondary,
+    fontStyle: 'normal',
+    ':hover': {
+      cursor: 'help',
+      position: 'relative',
+
+      '.jargon-info': {
+        display: 'block',
+        position: 'absolute',
+        top: '1.5em',
+        left: 0,
+        background: '#1d1e1d',
+        border: '1px solid #ccc',
+        color: '#ccc',
+        padding: '0.5rem',
+        borderRadius: '6px',
+        fontSize: '80%',
+        minWidth: '200px',
+        maxWidth: '450px',
+        zIndex: 1,
+        'b': {
+          color: '#9cdcfe',
+        }
+      },
+    },
+
+    '.jargon-info': {
+      display: 'none',
+    }
   }
 });
 

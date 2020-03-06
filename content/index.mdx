@@ -48,7 +48,7 @@ Unless otherwise noted, this site will deal only with topics that fit wholly wit
 <h4 style={{
   color: colors.primary,
 }}>
-Machine learning is a tool that creates a formula to transform input data into desired output.</h4>
+Machine learning is a tool that builds a model to transform input data into desired output.</h4>
 
 The goal of machine learning is to derive a mathematical formula, a model, that will take data provided to it as input and transform it into output. 
 
@@ -60,7 +60,7 @@ In this case, the problem is clear and doesn't require much exploration. Users' 
 ### 2. Set success metrics
 We set measurable goals in advance so we all know what we're working towards and we'll know when we've reached our goal. In this case, we've agreed upon the following:
 - fewer than 5% of the email that makes it to a user's inbox is spam, and  
-- fewer than 5% of ham is wrongly diverted to the junk folder.
+- fewer than 5% of _ham_ is wrongly diverted to the junk folder.
 
 We've decided to make this a competition between Oscar, our object-oriented programming guru, and Melissa, our machine learning intern.
 
@@ -69,10 +69,11 @@ If a programmer were to create a spam filter using a traditional software approa
 Machine learning differs. Let's look at how a data scientist would approach this binary classification problem. 
 
 ### 3. Prepare & explore the data
-The data scientist would start by collecting, say, 50,000 emails that have been identified and marked as either "spam" or "ham", hopefully, in roughly even amounts. She would start by dividing the emails as follows:
-1. 10,000 in a test set (generally, 20-30% of all data),
-2. 10,000 in a validation set (20-30% of the data left after the test set has been taken), and
-3. the remaining 30,000 will be used to train the model (the training set).
+The data scientist would start by collecting, say, 50,000 emails that have been identified and marked as either "spam" or "ham", hopefully, in roughly even amounts. She would start by dividing the emails as follows:  
+1. 10,000 in a _test set_ (generally, 20-30% of all data),  
+2. 10,000 in a _validation set_ (20-30% of the data left after the test set has been taken), and  
+3. the remaining 30,000 will be used to train the model (the _training set_).  
+
 
 After separating the data, she would perform exploratory data analysis ("EDA"). During EDA, she'd look at characteristics of the data set
  - similarities among the email marked as spam,  
@@ -89,7 +90,7 @@ The algorithm would then create a model that embodied its findings. The data sci
 She would likely repeat these steps with additional algorithms, looking for the best out-of-the-box performance. If any of the algorithms produced models whose performance approached her pre-established goals, she might choose one or two of them for further refinements. Finally, she would test the refined model or models on the 10,000 emails she had initially set aside for final testing. The model's performance on this final set of previously unseen emails is the best measure of its ability to filter spam from ham. It's important to note that once her filter is in production, she must continue to monitor its performance from time-to-time. Models tend to "drift", or lose accuracy over time. In this instance, you can imagine that spam senders will be looking for new ways to thwart the filter and the filter will need to be updated occasionally to account for these new tactics.
   
 The most important takeaways:
-- the data scientist did not write any rules herself; the algorithm generated rules after being given labeled data (emails marked as ham or spam  )
+- the data scientist did not write any rules herself; the algorithm generated rules after being given labeled data (emails marked as ham or spam)
 - the problem to be solved was clearly defined in advance  
 - the metrics required for a proposed solution to be deemed a success were clearly defined in advance  
 - the emails were generally representative of future emails that the model would be asked to mark as spam or ham  
