@@ -61,7 +61,7 @@ const BodyContent = styled.div({
     margin: '0 auto'
   },
   '.jargon-term': {
-    textDecoration: 'underline',
+    textDecoration: 'none',
     color: colors.secondary,
     fontStyle: 'normal',
     ':hover': {
