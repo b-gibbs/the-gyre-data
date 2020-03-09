@@ -32,7 +32,7 @@ module.exports = {
         background_color: `#0E2339`,
         theme_color: `#0E2339`,
         display: `minimal-ui`,
-        icon: `src/images/dp-logo-16x16.png`,
+        icon: `src/images/dp-logo-512.svg`,
       },
     },
     {
