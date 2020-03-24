@@ -42,14 +42,42 @@ Data science is relatively new and evolving quickly. The taxonomy and terms of a
 
 ## How does it work?  
 
-Traditional programming approaches and initial forays into AI generate answers given rules and data as inputs.
+Classical programming takes rules and data as inputs and generates answers.
 
 
 ![classical](./images/classical-programming.svg)
 
-Conversely, machine learning generates rules derived from the data and answers it is provided.
+A calculator is a simple example. A calculator takes data supplied by the user (2 + 7), applies the rules of addition it was programmed to follow, and returns the answer, 9. This was in fact the dominant paradigm for AI from the 1950s - 1980s. Known as symbolic AI, experts believed that they could automate intellectual tasks normally performed by humans by handcrafting a sufficiently large set of explicit rules. While this approach was sufficient for crafting chess opponents, it was abandoned in the 1980s when it became generally accepted that this approach would not be capable of tasks such as image classification, speech recognition and language translation.
+
+
+Conversely, machine learning takes data and answers as input and generates rules. These rules are referred to as a model.
 
 ![ml](./images/machine-learning.svg)
+
+As an example, let's look at predicting the price of housing. The hello world of data science is a dataset using data about housing prices in Boston in the 1970s. There are 506 homes in the dataset. The following information is provided for each home:
+
+| Abbr. | Description |
+| :-- | :-- |
+| CRIM | per capita crime rate by town |
+| ZN | proportion of residential land zoned for lots over 25,000 sq. ft. |
+| INDUS | proportion of non-retail business acres per town |
+| CHAS | 1 if tract bounds river; 0 otherwise |
+| NOX | nitric oxides concentration (parts per million) |
+| RM | average number of rooms per dwelling |
+| AGE | proportion of owner-occupied units built prior to 1940 |
+| DIS | weighted distances to five Boston employment centers |
+| RAD | index of accessibility to radial highways | 
+| TAX | full value property-tax rate per $10,000 |
+| PTRATIO | pupil-teacher ratio by town | 
+| B | 1000(Bk - 0.63)^2 where Bk is the proportion of blacks by town |
+| LSTAT | % lower status of the population |
+| MEDV | median value of owner-occupied home in $1,000s | 
+<br/><br/>
+The first five rows of the dataset look like this:  
+
+![head](./images/boston_head.png)
+<br/>
+
 
 ## Why would I use it?  
 
