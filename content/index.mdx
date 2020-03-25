@@ -17,7 +17,7 @@ import { colors } from 'gatsby-theme-apollo-core';
 }}>
 Data science is a set of methodologies for using data to draw meaningful conclusions that describe the present or predict the future.</h4>
 
-Data scientists write code to leverage the speed and power of computers to apply principles of statistics, probability, linear algebra and calculus to data in order to derive useful insights. An understanding of the domain in which they are operating is also critical to the data scientist’s success. A product manager can add real value to a data science project by sharing with the data science team her understanding of the product, the problems it is designed to solve and the broader domain in which the product sits.
+Data scientists write code to leverage the speed and power of computers to apply principles of statistics, probability, linear algebra and calculus to data in order to derive useful insights. An understanding of the domain in which they are operating is also critical to the data scientist’s success. A product manager can add real value to a data science project by sharing with the data science team her understanding of the product, the problems it is designed to solve, how the data science project fits and operates within the product, as well as the broader domain in which the product sits.
 
 Data science and artificial intelligence arose from very different origins but have come to be used interchangeably in many contexts. Artificial intelligence began in earnest in the 1950s as an attempt to create computers that could be made to “think” in the way humans do. Today, this is known as Artificial General Intelligence (or, “AGI”). Terms like “singularity” and the “Turing test” apply to AGI.
 
@@ -75,8 +75,12 @@ As an example, let's look at predicting the price of housing. The hello world of
 <br/><br/>
 The first five rows of the dataset look like this:  
 
-![head](./images/boston_head.png)
+![head](./images/dataframe.svg)
 <br/>
+
+Above is an annotated screenshot of the Boston housing dataset in a pandas DataFrame. pandas is an open source software package for manipulating data in Python. Each row is referred to as an observation or a sample. The leftmost column is an index, which contains a unique identifier for each row. The next 13 columns are the dataset's features, or the data to be used as input. The rightmost column contains the answers (which data scientist call labels). The goal is to derive a model that most closely explains the relationships between the features and the labels, such that if you fed the model data for an additional house, it would accurately predict the price of the house based on what it has learned from the data it used to build the model.
+
+This is an example of supervised learning---it's a machine learning problem where the observations are labeled, or have answers. 
 
 
 ## Why would I use it?  
